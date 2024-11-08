@@ -1,0 +1,17 @@
+% Addition
+a = 5 + 3;
+
+% Subtraction
+b = 10 - 4;
+
+% Multiplication
+c = 7 * 2;
+
+% Division
+d = 20 / 4;
+
+% Square Root
+e = sqrt(16);
+
+% Exponentiation
+f = 2^3;
