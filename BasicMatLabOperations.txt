@@ -15,3 +15,18 @@ e = sqrt(16);
 
 % Exponentiation
 f = 2^3;
+
+% mod
+mod(a,b)
+
+% complex
+complex(a,b)
+
+format long = 1.2345678
+=> 1.2345678
+
+format short 
+=> 1.23456
+
+
+

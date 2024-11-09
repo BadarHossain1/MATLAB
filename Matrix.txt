@@ -1,0 +1,32 @@
+a = [1 2 3, 4 5 6, 7 8 9];
+
+a = 1 2 3
+    4 5 6
+    7 8 9
+
+// Some built in functions
+
+=> zeroes(row,column)
+=> ones(row,column)
+=> eye(row,column)
+=> rand(row,column)
+=> randi([min,max],row,column)
+=> round(a) => Round off to nearest integer
+=> ceil(a) => Round off to nearest integer greater than or equal to the number
+=> floor(a) => Round off to nearest integer less than or equal to the number
+=> fix(a) => Round off to nearest integer towards zero
+
+// Matrix Operations
+
+a.^2 => Square of each element
+a.^3 => Cube of each element
+a.^b => Power of each element
+a.*b => Element-wise multiplication
+a./b => Element-wise division
+a.\b => Element-wise division
+a+b => Element-wise addition
+
+// Matrix Multiplication
+a*b => Matrix multiplication
+a.*b => Element-wise multiplication
+
