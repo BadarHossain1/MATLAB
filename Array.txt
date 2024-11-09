@@ -11,4 +11,10 @@ number(index)
 //Increment Array
 x = 1:2:10
 
+x = [1 8 9 4];
 
+=> max(x)
+=> min(x)
+=> sum(x)
+
+=> sort(x)
