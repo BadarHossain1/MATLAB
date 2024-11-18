@@ -4,7 +4,7 @@ t = input('Enter the tolerance')
 x0 = input('Enter the initial guess')
 
 
-for i = 1:n;
+for i = 1:n
     x1 = g(x0);
     fprintf('x%d=%.4f\n',i,x1)
     if abs(x1-x0)<t
@@ -13,4 +13,3 @@ for i = 1:n;
     
     x0 = x1;
 end
-    

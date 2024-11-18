@@ -2,7 +2,7 @@ f = input('Enter Function');
 to1 = input('Tolerance: ');
 x0 = input('Initial Guess 1: ');
 x1 = input('Initial Guess 2: ');
-n = input('Enter total iteratipon number:');
+n = input('Enter total iteration number:');
 
 
 for i = 1:n

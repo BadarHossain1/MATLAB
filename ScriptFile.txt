@@ -15,7 +15,7 @@ disp(txt, 'xyz'); --> Will give error
 
 For Multiple print
 
-% S -> String
+%s-> String
 %c -> Character
 %d -> Integer
 %f -> Float
