@@ -1,22 +1,23 @@
-df = @(x, y) -2 * x * y^2;
-x0 = input('Enter initial value of x: ');
-y0 = input('Enter initial value of y: ');
-x1 = input('Enter the value of x at which y is to be evaluated: ');
-tol = input('Enter desired level of accuracy in the final result: ');
-n = ceil((x1 - x0) / sqrt(tol)); 
-h = (x1 - x0) / n; 
-X = zeros(1, n + 1);
-Y = zeros(1, n + 1);
-X(1) = x0;
-Y(1) = y0;
+f = input('Enter your function as @(x,y): ');    % Function input (e.g., @(x,y) x+y)
+x0 = input('Enter the initial independent variable (x0): '); % Initial x
+y0 = input('Enter the initial dependent variable (y0): ');   % Initial y
+h = input('Enter the step size (h): ');        % Step size
+xn = input('Enter the point where you want the value of y (xn): '); % Target x value
 
-for k = 1:n
-    y_t = Y(k) + h * df(X(k), Y(k));
-    Y(k + 1) = Y(k) + h / 2 * (df(X(k), Y(k)) + df(X(k) + h, y_t));
-    while abs(Y(k + 1) - y_t) > h
-        y_t = Y(k) + h * df(X(k), Y(k + 1));
-        Y(k + 1) = Y(k) + h / 2 * (df(X(k), Y(k)) + df(X(k) + h, y_t));
-    end
-    X(k + 1) = X(k) + h;
+% Compute the number of steps
+n = (xn - x0) / h;
+
+% Initialize x and y
+x = x0; 
+y = y0;
+
+% Perform Modified Euler's Method
+for i = 1:n
+    y_predictor = y + h * f(x, y);  % Predictor step
+    x_next = x + h;                % Update x for the next step
+    y_corrector = y + 0.5 * h * (f(x, y) + f(x_next, y_predictor)); % Corrector step
+    
+    % Update x and y for the next iteration
+    x = x_next;  
+    y = y_corrector
 end
-fprintf('For x = %g\n y = %g\n', x1, Y(n + 1));

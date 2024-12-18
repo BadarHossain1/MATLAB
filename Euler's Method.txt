@@ -1,14 +1,31 @@
-Euler's Method
+f = input('Enter your function as @(x, y): '); % Example: @(x, y) -2 * x * y^2
+x0 = input('Enter the initial independent variable (x0): ');
+y0 = input('Enter the initial dependent variable (y0): ');
+h = input('Enter the step size (h): ');
+xn = input('Enter the point (xn) you want to elaborate: ');
 
-f = input('Enter your function: ');
-x0 = input('Enter the initial independent variable: ');
-y0 = input('Enter the initial dependent variable: ');
-h = input('Enter the step size: ');
-xn = input('Enter the point you want to elaborate: ');
-n = (xn -x0)/h;
+% Calculate the number of steps
+n = (xn - x0) / h;
+
+% Initialize arrays for x and y values
 x(1) = x0;
 y(1) = y0;
+
+% Euler's method loop
 for i = 1:n
-    y(i+1) = y(i) + h*f(x(i),y(i))
+    y(i+1) = y(i) + h * f(x(i), y(i));  % Euler's formula
     x(i+1) = x0 + i * h;
 end
+
+% Print the results
+fprintf('Results:\n');
+for i = 1:length(x)
+    fprintf('x = %.4f, y = %.4f\n', x(i), y(i));
+end
+
+% Plot the solution
+plot(x, y, '-o', 'LineWidth', 1.5, 'MarkerSize', 6);
+xlabel('x');
+ylabel('y');
+title('Solution of the ODE using Euler Method');
+grid on;
